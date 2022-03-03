@@ -126,7 +126,9 @@ function checkTheAnswer() {
       }
       if (!included && answerRow[i].className !== "correct") {
           answerRow[i].className = "incorrect";
-          key.className = "incorrect";
+          if (key.className !== "correct") {
+              key.className = "incorrect";
+          }
       }
   }
   answerWord = "";
