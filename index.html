@@ -1,90 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <style>
+      .container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+      div{
+          font-family: "Hiragino Maru Gothic ProN","BIZ UDGothic";
+      }
+      div.newline{
+          width: 100%;
+      }
+      div.answerbase{
+          width: 580px;
+          height: 290px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+      }
+      div.answerRow{
+          width: 230px;
+          height: 50px;
+          margin-right: 24px;
+          margin-left: 24px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+      }
+      div.space{
+          width: 750px;
+          height: 72px;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+      }
+      div.keybase{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 830px;
+          height: 220px;
+      }
+      div.column{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 44px;
+      }
+      div.messagebase{
+          width: 200px;
+          background-color: lightpink;
+          margin-top: -350px;
+          display: none;
+          justify-content: center;
+          flex-wrap: wrap;
+      }
+      div.message{
+          margin: 20px;
+          text-align: center;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+      }
+      div.next{
+          padding: 12px;
+          margin: 20px;
+          height: 20px;
+          border-radius: 4px;
+          background-color: lightcyan;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+      }
+      span.check{
+          width: 128px;
+          height: 48px;
+      }
+      span.delete{
+          width: 88px;
+          height: 48px;
+          font-size: 13px;
+      }
+      span.included{
+          background-color: blanchedalmond;
+      }
+      span.correct{
+          background-color: lightgreen;
+      }
+      span.incorrect{
+          background-color: gray;
+      }
+      span.dummy{
+          width: 88px;
+          background-color: transparent;
+      }
+      span{
+          width: 38px;
+          height: 38px;
+          margin: 2px;
+          background-color: lightgray;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+  </style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
+  <div class="container">
+    <div class="title">
+      <h1>POKEMON WORDLE ヒントつき</h1>
     </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
+    <div class="newline"></div>
+    <div class="answerbase"></div>
+    <div class="newline"></div>
+    <div class="space">
+        <span class="delete">1もじけす</span>
+        <span class="check">CHECK</span>
+        <span class="dummy"></span>
+    </div>
+    <div class="newline"></div>
+    <div class="keybase"></div>
+    <div class="newline"></div>
+    <div class="messagebase">
+        <div class="message">🎊せいかい🎊</div>
+        <div class="newline"></div>
+        <div class="next">つぎへ</div>
     </div>
   </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
+  <script type="text/javascript" src="pokemon.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
