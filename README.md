@@ -5,7 +5,7 @@
 ヒント付きのPOKEMON WORDLEです。
 
 POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
-
+<br><br>
 
 
 ## POKEMON WORDLEとは
@@ -18,13 +18,13 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 ただ、子供にはちょっと難しかったみたいです。ほとんど当てることができませんでした（楽しんではいましたが）。
 
-
+<br><br>
 
 
 ## ヒント付きのPOKEMON WORDLEを作ってみた
 
 子供が正解を導き出せるヒント付きのポケモンWORDLEを作ってみました。
-
+<br><br>
 
 ### 工夫したところ
 
@@ -47,6 +47,7 @@ Flexboxを知らなかったらそもそも作ろうとは考えなかったと�
 
 #### メッセージ枠の配置
 
+![message](./images/message.png)
 
 メッセージ枠をキーボード前面に配置するのに苦労しましたが、結局キーボード下に配置してから「margin-top: -200」といった感じでマージンの値をマイナスにすることで実現できました。
 
