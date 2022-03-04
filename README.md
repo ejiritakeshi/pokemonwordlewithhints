@@ -36,7 +36,11 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 ### 要素の配置はFlexbox
 
+![Flexbox](./images/flexbox.png)
 
+Flexboxを知らなかったらそもそも作ろうとは考えなかったと思います。
+
+大活躍でした。
 
 ### メッセージ枠の配置
 
