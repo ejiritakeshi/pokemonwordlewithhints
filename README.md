@@ -7,6 +7,7 @@
 POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 
+
 ## POKEMON WORDLEとは
 
 お題のポケモンの名前を当てるゲーム
@@ -18,14 +19,16 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 ただ、子供にはちょっと難しかったみたいです。ほとんど当てることができませんでした（楽しんではいましたが）。
 
 
+
+
 ## ヒント付きのPOKEMON WORDLEを作ってみた
 
 子供が正解を導き出せるヒント付きのポケモンWORDLEを作ってみました。
 
 
-## 工夫したところ
+### 工夫したところ
 
-### ヒントが出る
+#### ヒントが出る
 
 ![POKEMON WORDLE with Hints](./images/hints.png)
 
@@ -34,7 +37,7 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 フィルター関数大活躍です。
 
 
-### 要素の配置はFlexbox
+#### 要素の配置はFlexbox
 
 ![Flexbox](./images/flexbox.png)
 
@@ -42,7 +45,7 @@ Flexboxを知らなかったらそもそも作ろうとは考えなかったと�
 
 大活躍でした。
 
-### メッセージ枠の配置
+#### メッセージ枠の配置
 
 
 メッセージ枠をキーボード前面に配置するのに苦労しましたが、結局キーボード下に配置してから「margin-top: -200」といった感じでマージンの値をマイナスにすることで実現できました。
