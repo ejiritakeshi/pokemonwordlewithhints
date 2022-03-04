@@ -11,14 +11,14 @@ const letters = ["アイウエオ",
   "ヤユヨ",
   "ラリルレロ",
   "ワンー",
-  "ァィゥェォ",
   "ガギグゲゴ",
   "ザジズゼゾ",
   "ダヂヅデド",
-  "ッ",
   "バビブベボ",
   "パピプペポ",
-  "ャュョ"];
+  "ァィゥェォ",
+  "ャュョ",
+  "ッ"];
 
 const base = document.querySelector('.keybase');
 const keys = [];
@@ -82,6 +82,10 @@ function clickLetter() {
   if (answerWord.length > 4) {
     return;
   }
+  if (messageBase.style.display === 'flex') {
+    return;
+  }
+
   answerWord += this.textContent;
   displayAnswer();
 }
@@ -103,6 +107,10 @@ function displayAnswer() {
 
 function checkTheAnswer() {
   if (answerWord.length < 5) {
+    return;
+  }
+
+  if (messageBase.style.display === 'flex') {
     return;
   }
 
