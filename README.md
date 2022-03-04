@@ -12,3 +12,6 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 ![POKEMON WORDLE](./images/PokemonWordle.PNG)
 
+ポケモン大好きな子供（7歳と5歳）と一緒にやってみたら楽しい！
+
+ただ、子供にはちょっと難しかったみたいで、ほとんど親が答えていた…（楽しんではいましたが）
