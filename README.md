@@ -2,7 +2,7 @@
 
 ## これは何？
 
-POKEMON WORDLEにヒントを付けてみました。
+ヒント付きのPOKEMON WORDLEです。
 
 POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
