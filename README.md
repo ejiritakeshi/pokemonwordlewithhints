@@ -10,5 +10,5 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 お題のポケモンの名前を当てるゲーム
 
-
+![POKEMON WORDLE](./images/POKEMON WORDLE.png)
 
