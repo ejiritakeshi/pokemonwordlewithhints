@@ -1,1 +1,1 @@
-# pokemonwordlewithhint
+# ポケモンWORDLEヒントつき
