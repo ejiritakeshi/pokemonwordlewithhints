@@ -47,6 +47,11 @@ for (let j = 0; j < 10; j++) {
   }
 }
 
+if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+  let style = "<style>p{ font-size: 12px; }<style>";
+  document.querySelector("head").insertAdjacentHTML("beforeend", style);
+}
+
 let hints = allPokemon;
 function displayHints() {
   const hintBase = document.querySelector('.hintbase');
@@ -121,7 +126,7 @@ function checkTheAnswer() {
       answerRow[i].className = "correct";
       document.getElementById(correct[i]).className = "correct";
       correct = correct.slice(0, i) + "?" + correct.slice(i + 1, correct.length);
-      hints = hints.filter( pokemonName => pokemonName[i] === answerWord[i] );
+      hints = hints.filter(pokemonName => pokemonName[i] === answerWord[i]);
     }
   }
   if (answerWord === correctAnswer) {
@@ -138,7 +143,7 @@ function checkTheAnswer() {
         if (answerRow[i].className !== "correct") {
           answerRow[i].className = "included";
           correct = correct.slice(0, j) + "?" + correct.slice(j + 1, correct.length);
-          hints = hints.filter( pokemonName => pokemonName.includes(answerWord[i]) );
+          hints = hints.filter(pokemonName => pokemonName.includes(answerWord[i]));
         }
         if (key.className !== "correct") {
           key.className = "included";
@@ -146,12 +151,12 @@ function checkTheAnswer() {
         included = true;
       }
     }
-    
+
     if (!included && answerRow[i].className !== "correct") {
       answerRow[i].className = "incorrect";
       if (key.className !== "correct" && key.className !== "included") {
         key.className = "incorrect";
-        hints = hints.filter( pokemonName => !pokemonName.includes(answerWord[i]) );
+        hints = hints.filter(pokemonName => !pokemonName.includes(answerWord[i]));
       }
     }
   }
