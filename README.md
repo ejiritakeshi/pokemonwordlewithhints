@@ -27,7 +27,7 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 
 ### ヒントが出る
 
-![POKEMON WORDLE with Hints](./image/hints.png)
+![POKEMON WORDLE with Hints](./images/hints.png)
 
 使える文字が減少すると、それに合わせてヒントのポケモンが絞られるようになっています。
 
