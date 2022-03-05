@@ -24,6 +24,8 @@ POKEMON WORDLEの本家は[こちら](https://wordle.mega-yadoran.jp/)
 ## ヒント付きのPOKEMON WORDLEを作ってみた
 
 子供が正解を導き出せるヒント付きのポケモンWORDLEを作ってみました。
+
+![POKEMON WORDLE with Hints](./images/pokemonwordlewithhints.png)
 <br><br>
 
 ### 工夫したところ
