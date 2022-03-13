@@ -17,6 +17,16 @@ div.newline {
 }
 
 div.answerbase {
+  position: relative;
+  width: 580px;
+  height: 290px;
+  display: flex;
+}
+
+div.answerfront, div.answerback {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 580px;
   height: 290px;
   display: flex;
@@ -64,9 +74,14 @@ div.messagebase {
   background-color: #ffbbbb;
   margin-top: -350px;
   border-radius: 4px;
-  display: none;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 100;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition-delay: 300ms;
+  -webkit-transition-delay: 300ms;
 }
 
 div.message {
@@ -111,21 +126,25 @@ span.delete {
   font-size: 13px;
 }
 
-span.included {
-  background-color: wheat;
+span.dummy {
+  width: 88px;
+  background-color: transparent;
 }
 
 span.correct {
   background-color: #7accb1;
 }
 
+span.included {
+  background-color: wheat;
+}
+
 span.incorrect {
   background-color: gray;
 }
 
-span.dummy {
-  width: 88px;
-  background-color: transparent;
+span.back {
+  transform: rotateY(-180deg);
 }
 
 span {
@@ -140,6 +159,9 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 1s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 p {
@@ -151,4 +173,3 @@ p {
 h2 {
   margin-top: 60px;
 }
-
