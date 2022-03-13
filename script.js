@@ -37,18 +37,22 @@ letters.forEach(row => {
   }
 });
 
-const answerBase = document.querySelector(".answerbase");
-const answerRows = [];
-for (let j = 0; j < 10; j++) {
-  const answerRow = document.createElement('div');
-  answerRow.className = 'answerRow';
-  answerBase.appendChild(answerRow);
-  const row = [];
-  answerRows.push(row);
-  for (let i = 0; i < 5; i++) {
-    const span = document.createElement('span');
-    answerRow.appendChild(span);
-    row.push(span);
+const frontRows = [];
+initializeAnswerBase(frontRows, document.querySelector('.answerfront'));
+const backRows = [];
+initializeAnswerBase(backRows, document.querySelector('.answerback'));
+function initializeAnswerBase(rows, base) {
+  for (let j = 0; j < 10; j++) {
+    const answerRow = document.createElement('div');
+    answerRow.className = 'answerRow';
+    base.appendChild(answerRow);
+    const row = [];
+    rows.push(row);
+    for (let i = 0; i < 5; i++) {
+      const span = document.createElement('span');
+      answerRow.appendChild(span);
+      row.push(span);
+    }
   }
 }
 
@@ -78,17 +82,22 @@ initialize();
 
 function initialize() {
   messageBase.style.display = 'none';
+  messageBase.style.opacity = '0';
   times = 0;
-  answerFrames = answerRows[0];
+  answerFrames = [...frontRows[0], ...backRows[0]];
   answerWord = [];
   correctAnswer = allPokemon[Math.floor(Math.random() * allPokemon.length)];
-  answerRows.forEach( row => row.forEach( span => {
+  [...frontRows, ...backRows].forEach( row => row.forEach( (span, index) => {
+    span.removeAttribute('style');
     span.textContent = "";
     span.classList.remove(...span.classList);
   } ) );
+  backRows.forEach( row => row.forEach( span => span.className = "back" ) );
   keys.forEach( key => key.classList.remove(...key.classList) );
   hints = allPokemon;
   displayHints();
+  setTimeout(() => [...frontRows, ...backRows].forEach( row => row.forEach( (span, index) =>
+                    span.style.transitionDelay = `${index * 0.15}s` ) ), 1000);
 }
 
 function clickLetter() {
@@ -107,7 +116,7 @@ function displayAnswer(answerHandler) {
     return;
   }
   answerHandler();
-  answerFrames.forEach((frame, index) => frame.textContent = answerWord[index] ? answerWord[index] : "");
+  answerFrames.forEach((frame, index) => frame.textContent = answerWord[index % 5] ? answerWord[index % 5] : "");
 }
 
 function checkTheAnswer() {
@@ -117,11 +126,15 @@ function checkTheAnswer() {
   if (messageBase.style.display === 'flex') {
     return;
   }
+    
+  answerFrames.forEach( (frame, index) => index < 5 ?
+                       frame.style.transform = "rotateY(180deg)" :
+                       frame.style.transform = "rotateY(0deg)" );
 
   const correct = [...correctAnswer];
   for (let i = 0; i < 5; i++) {
     if (correct[i] === answerWord[i]) {
-      answerFrames[i].className = "correct";
+      answerFrames[i + 5].className = "correct";
       document.getElementById(correct[i]).className = "correct";
       correct[i] = "?";
       hints = hints.filter(pokemonName => pokemonName[i] === answerWord[i]);
@@ -134,13 +147,14 @@ function checkTheAnswer() {
   }
 
   for (let i = 0; i < 5; i++) {
-    if (answerFrames[i].className !== "") {
+    if (answerFrames[i + 5].className === "correct") {
       continue;
     }
     
     const key = document.getElementById(answerWord[i]);
     if (correct.includes(answerWord[i])) {
       answerFrames[i].className = "included";
+      answerFrames[i + 5].className = "included";
       correct[correct.indexOf(answerWord[i])] = "?";
       if (key.className !== "correct") {
         key.className = "included";
@@ -149,7 +163,8 @@ function checkTheAnswer() {
       }
     } else {
       answerFrames[i].className = "incorrect";
-      if (key.className === "") {
+      answerFrames[i + 5].className = "incorrect";
+        if (key.className === "") {
         key.className = "incorrect";
         hints = hints.filter( pokemonName => !pokemonName.includes(answerWord[i]) );
       } else {
@@ -165,12 +180,13 @@ function checkTheAnswer() {
     displayMessage(`ざんねん😢<br><br>せいかいは<br>${correctAnswer}<br>でした`);
     return;
   }
-  answerFrames = answerRows[times];
+  answerFrames = [...frontRows[times], ...backRows[times]];
   displayHints();
 }
 
 function displayMessage(string) {
   messageBase.style.display = 'flex';
+  setTimeout(() => messageBase.style.opacity = "1", 10)
   message.innerHTML = string;
 }
 
