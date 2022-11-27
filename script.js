@@ -186,7 +186,7 @@ function checkTheAnswer() {
 
 function displayMessage(string) {
   messageBase.style.display = 'flex';
-  setTimeout(() => messageBase.style.opacity = "1", 10)
+  setTimeout(() => messageBase.style.opacity = "1", 500);
   message.innerHTML = string;
 }
 
